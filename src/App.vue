@@ -53,7 +53,7 @@
             <v-list-tile slot="activator">
               <v-list-tile-content>
                 <v-list-tile-title>
-                  xxxxxxxxxxxx
+                  Personas
                 </v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
