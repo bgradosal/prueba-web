@@ -2,7 +2,7 @@
     <v-layout align-start>
         <v-flex>
             <v-toolbar flat color="white">
-                <v-toolbar-title>Categorías</v-toolbar-title>
+                <v-toolbar-title>Enfermedad</v-toolbar-title>
                 <v-divider
                 class="mx-2"
                 inset
@@ -84,9 +84,12 @@
     </v-layout>
 </template>
 <script>
+    import axios from 'axios'
     export default {
         data(){
             return {
+                enfermedad:[],
+
                 dialog: false,
                 headers: [
                 {
@@ -134,8 +137,17 @@
 
         created () {
             this.initialize()
+            this.listar();
         },
         methods:{
+            listar(){
+                axios.get('http://localhost:50903/api/Enfermedades/Listar').then(function(response){
+                    console.log(response);
+                }).catch(function(error){
+                    console.log(error)
+                });
+            },
+            
             initialize () {
             this.desserts = [
                 {
